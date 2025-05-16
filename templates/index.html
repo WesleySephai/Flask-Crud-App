@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <title>CRUD App</title>
+</head>
+<body>
+    <h1>Items</h1>
+    <form method="POST" action="/add">
+        <input type="text" name="name" placeholder="Item name" required>
+        <input type="submit" value="Add">
+    </form>
+    <ul>
+        {% for item in items %}
+        <li>{{ item.name }} <a href="/delete/{{ item.id }}">Delete</a></li>
+        {% endfor %}
+    </ul>
+</body>
